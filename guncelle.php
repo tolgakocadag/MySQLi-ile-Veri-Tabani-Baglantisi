@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <title>Veri Tabanı Yönetimi</title>
   </head>
+  <header>
+    <?php include 'ayarlar.php'; ?>
+  </header>
   <body>
     <?php
           if(isset($_GET['id'])){
-            $id=$_GET['id'];echo $id;
+            $id=$_GET['id'];
             if (isset($_POST['submit'])) {
-              $isim=$_POST['isim'];echo "selam3";
+              $isim=$_POST['isim'];
               $soyisim=$_POST['soyisim'];
               $guncelleSorgusu=mysqli_query($baglanti,"UPDATE BILGILER SET ISIM='$isim',SOYISIM='$soyisim' WHERE ID=".$id);
               if($guncelleSorgusu){
